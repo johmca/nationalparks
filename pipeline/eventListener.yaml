@@ -1,0 +1,11 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  name: nationalparks
+spec:
+  serviceAccountName: pipeline
+  triggers:
+  - bindings:
+    - ref: nationalparks
+    template:
+      name: nationalparks
